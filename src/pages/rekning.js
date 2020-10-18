@@ -26,7 +26,7 @@ const vids = () => (
   <li><a href="https://drive.google.com/file/d/1m87sJ_Abwxa9YBbQmCxsuoFiEcSyzUCz/view?usp=sharing"> Å gonge fleirsifra heiltal </a></li> 
 	  	</Box>		
 	<p></p> 
-	  <Box hdl="Divisjon (-)" colh="#ffb84d" pen="black">
+	  <Box hdl="Divisjon (:)" colh="#ffb84d" pen="black">
 <li><a href="https://drive.google.com/file/d/1KtiWIrExY1xpICQzMBroe0MWNflDwtKy/view?usp=sharing"> Med heiltal</a></li>
 	  	</Box>	 	
 	  	  		  	
