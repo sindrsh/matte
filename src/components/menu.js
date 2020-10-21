@@ -48,6 +48,13 @@ const Menu = () => (
       to="/brok/"
     >
     <i></i> Brøk
+    </MenuLink>
+      <MenuLine/>      
+<MenuLink
+   	 className={styles.btn}
+      to="/bok/"
+    >
+    <i></i> Bok
     </MenuLink>       
       </ul>
     </div>
