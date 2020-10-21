@@ -8,8 +8,9 @@ import Box from "../components/test"
 const vids = () => (
 	<Layout>
 	 <Vids>
-	  <Box hdl="Verdien av en brøk" colh="#ffb84d" pen="black">
- <li><a href="https://drive.google.com/file/d/1-862fYq03gTybEd5ROVk2qqh33JTjDD_/view?usp=sharing"> Utviding av brøkar</a></li> 	  
+	  <Box hdl="Verdien av ein brøk" colh="#ffb84d" pen="black">
+<li><a href="https://drive.google.com/file/d/1-862fYq03gTybEd5ROVk2qqh33JTjDD_/view?usp=sharing"> Utviding av brøkar</a></li> 
+<li><a href="https://drive.google.com/file/d/1-862fYq03gTybEd5ROVk2qqh33JTjDD_/view?usp=sharing"> Forkorting av brøkar</a></li> 	  
 	  	</Box>	 
 	 <p> </p> 		 
 	  <Box hdl="Addisjon og subraksjon" colh="#ffb84d" pen="black">
