@@ -14,8 +14,9 @@ const vids = () => (
 	  	</Box>
 	  	<p></p>
 	  <Box hdl="Subtraksjon (-)" colh="#ffb84d" pen="black">
-<li><a href="https://expl.ai/ZGDJWXP"> Med tiarovergangar</a></li>
-  <li><a href="https://drive.google.com/file/d/1guA0MY-C0lxhI793Y_fIb4-vZbgWUakp/view?usp=sharing"> Alternativ metode</a></li>
+<li><a href="https://drive.google.com/file/d/1guA0MY-C0lxhI793Y_fIb4-vZbgWUakp/view?usp=sharing"> Anbefalt metode</a></li>
+<li><a href="https://expl.ai/ZGDJWXP"> Med oppstilling</a></li>
+  
 	  	</Box>
 	  	<p></p>
 	  <Box hdl="Multiplikasjon (&middot;)" colh="#ffb84d" pen="black">
@@ -27,7 +28,8 @@ const vids = () => (
 	  	</Box>		
 	<p></p> 
 	  <Box hdl="Divisjon (:)" colh="#ffb84d" pen="black">
-<li><a href="https://drive.google.com/file/d/1KtiWIrExY1xpICQzMBroe0MWNflDwtKy/view?usp=sharing"> Med heiltal</a></li>
+<li><a href="https://drive.google.com/file/d/1WAiyZKhor4-q638e9fz-M_tNruuJ5a4l/view?usp=sharing"> Med heiltal (anbefalt metode)</a></li>
+<li><a href="https://drive.google.com/file/d/1KtiWIrExY1xpICQzMBroe0MWNflDwtKy/view?usp=sharing"> Med heiltal (oppstilling)</a></li>
 	  	</Box>	 	
 	  	  		  	
 	  	 </Vids>
