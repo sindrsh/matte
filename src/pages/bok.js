@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 
 const IndexPage = () => (
   <Layout>
-	<a href="https://drive.google.com/file/d/1hPcTI8eSD7JYnbZNmQuWIQOC1Tm-yvJ5/view?usp=sharing"> Matematikken sine byggesteinar</a> 
+	<a href="https://drive.google.com/file/d/1YqmxRJgP2lblnrMPUT8qfH2nhcNPWJIv/view?usp=sharing"> Matematikken sine byggesteinar</a> 
   </Layout>
 )
 
