@@ -55,7 +55,13 @@ const Menu = () => (
       to="/bok/"
     >
     <i></i> Bok
-    </MenuLink>       
+    </MenuLink>    
+<MenuLink
+   	 className={styles.btn}
+      to="/pdf_gen/"
+    >
+    <i></i> Oppgåvegenerator
+    </MenuLink>        
       </ul>
     </div>
     
