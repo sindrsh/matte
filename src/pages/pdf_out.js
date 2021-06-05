@@ -2,6 +2,7 @@ import React from "react"
 import MathJax from 'react-mathjax2'
 
 const PdfOut = ({ location }) => {
+	if(location.state){
 	let alph = ['a','b','c','d','e','f','g','h','i'];
 	let cnt = 0;
 	let margleft = '10px';
@@ -154,6 +155,8 @@ const PdfOut = ({ location }) => {
 	 else {
 		return <p> Fyll inn tittel :-) </p>
 	  }
+;}
+else{return null;}
 }
 
 export default PdfOut
