@@ -8,7 +8,7 @@ const PdfOut = ({ location }) => {
 	let margleft = '10px';
 	let margleftupdate = '20px';
 	let leftTotal = parseInt(margleft, 10) + parseInt( margleftupdate, 10 ) + "px";
-	let funclist = [Ad2,Ad3,Ad2wc];
+	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix, Sub2];
 	let upd_data = [];
 	let upd_funclist = [];
 
@@ -46,8 +46,13 @@ const PdfOut = ({ location }) => {
 			ad10 = ad10.toString();
 			ad1a = ad1a.toString();
 			
+			let s = ad10a+ad1a+'+'+ad10+ad1; 
+			if (getRndInteger(0,1) === 0){
+				s = ad10+ad1+'+'+ad10a+ad1a;
+			}
+			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
-				            <MathJax.Node inline>{ad10+ad1+'+'+ad10a+ad1a}
+				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
 				    </MathJax.Context></p>);  
 		}
@@ -82,8 +87,13 @@ const PdfOut = ({ location }) => {
 			ad1a = ad1a.toString();
 			ad10a = ad10a.toString();
 			
+			let s = ad100+ad10+ad1+'+'+ad100a+ad10a+ad1a;
+			if (getRndInteger(0,1) === 0){
+				s = ad100a+ad10a+ad1a+'+'+ad100+ad10+ad1;
+			}
+			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
-				            <MathJax.Node inline>{ad100+ad10+ad1+'+'+ad100a+ad10a+ad1a}
+				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
 				    </MathJax.Context></p>);  
 		}
@@ -116,8 +126,81 @@ const PdfOut = ({ location }) => {
 			ad10 = ad10.toString();
 			ad1a = ad1a.toString();
 			
+			let s = ad10a+ad1a+'+'+ad10+ad1; 
+			if (getRndInteger(0,1) === 0){
+				s = ad10+ad1+'+'+ad10a+ad1a;
+			}
+			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
-				            <MathJax.Node inline>{ad10+ad1+'+'+ad10a+ad1a}
+				            <MathJax.Node inline>{s}
+				            </MathJax.Node>
+				    </MathJax.Context></p>);  
+		}
+		return exs;
+	}
+	
+	function Ad2mix(k){
+		let exs = [];
+		exs.push(ExTitle());
+		
+		for (let i = 1; i <= k; i++) {
+			let a = getRndInteger(1,99);
+			let b = getRndInteger(1,99);
+			a = a.toString();
+			b= b.toString();
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+						        <MathJax.Node inline>{a+'+'+b}
+						        </MathJax.Node>
+						</MathJax.Context></p>);  
+		}				
+		return exs;
+	}
+	
+	function Ad3mix(k){
+		let exs = [];
+		exs.push(ExTitle());
+		
+		for (let i = 1; i <= k; i++) {
+			let a = getRndInteger(1,999);
+			let b = getRndInteger(1,999);
+			a = a.toString();
+			b= b.toString();
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+						        <MathJax.Node inline>{a+'+'+b}
+						        </MathJax.Node>
+						</MathJax.Context></p>);  
+		}				
+		return exs;
+	}
+	
+	function Sub2(k){
+		let exs = [];
+		exs.push(ExTitle());
+		let a1, a10, b1, b10;
+		for (let i = 1; i <= k; i++) {
+			a10 = getRndInteger(1,9);
+			b10 = getRndInteger(0,a10-1);
+			if (b10===0){
+				b10='';
+				a1 = getRndInteger(1,9);
+				b1 = getRndInteger(1,a1);
+				}
+			else {
+			b10 = b10.toString();
+			a1 = getRndInteger(0,9);
+			b1 = getRndInteger(0,a1);
+			}
+			
+			a1 = a1.toString();
+			a10 = a10.toString();
+			b1 = b1.toString();
+			
+			let s = a10+a1+'-'+b10+b1; 
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
 				    </MathJax.Context></p>);  
 		}

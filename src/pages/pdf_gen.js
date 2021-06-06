@@ -20,23 +20,33 @@ class NameForm extends React.Component {
     	ad2: null,
     	ad3: null,
     	ad2wc: null,
+    	ad2mix: null,
+    	ad3mix: null,
+    	sub2: null,
     	};
 	
   }
 
+  chTitle = (event) => {
+    this.setState({title: event.target.value});
+  }
   chAd2 = (event) => {
     this.setState({ad2: event.target.value});
   }
-  
   chAd3 = (event) => {
     this.setState({ad3: event.target.value});
   }
   chAd2wc = (event) => {
     this.setState({ad2wc: event.target.value});
   }
-  
-  chTitle = (event) => {
-    this.setState({title: event.target.value});
+  chAd2mix = (event) => {
+    this.setState({ad2mix: event.target.value});
+  }
+  chAd3mix = (event) => {
+    this.setState({ad3mix: event.target.value});
+  }
+  chSub2 = (event) => {
+    this.setState({sub2: event.target.value});
   }
   
   render() {
@@ -56,6 +66,12 @@ class NameForm extends React.Component {
         
         <ValInput val={this.state.ad2wc} ch={this.chAd2wc} title='Addisjon med 2 siffer, med tiarovergongar'/>
         
+        <ValInput val={this.state.ad2mix} ch={this.chAd2mix} title='Addisjon med 2 siffer, blanda'/>
+        
+        <ValInput val={this.state.ad3mix} ch={this.chAd3mix} title='Addisjon med 3 siffer, blanda'/>
+        
+        <ValInput val={this.state.sub2} ch={this.chSub2} title='Subtraksjon med to siffer, utan tiarovergongar'/>
+        
     <button>
 	<Link
       to={"/pdf_out/"}
@@ -64,7 +80,11 @@ class NameForm extends React.Component {
       data: [
       this.state.ad2,
       this.state.ad3,
-      this.state.ad2wc] }}
+      this.state.ad2wc,
+      this.state.ad2mix,
+      this.state.ad3mix,
+      this.state.sub2,
+      ] }}
     >
     Lag PDF
     </Link>
