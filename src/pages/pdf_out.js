@@ -239,7 +239,7 @@ const PdfOut = ({ location }) => {
 		return <p> Fyll inn tittel :-) </p>
 	  }
 ;}
-else{return null;}
+else{return <p>Noe er galt. Ta kontakt med Sindre! </p>;}
 }
 
 export default PdfOut
