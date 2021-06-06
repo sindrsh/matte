@@ -246,4 +246,11 @@ const PdfOut = () => {
 	  }
 }
 
-export default PdfOut
+const PdfGen = () => {
+	if (typeof(window) !== 'undefined'){
+		return(<PdfOut/>)
+	}
+	else{return null}
+}
+
+export default PdfGen

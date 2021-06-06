@@ -2,8 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import Link from "gatsby-link"
 
-//import styles from "../components/layout"
-
 const ValInput = (props) => 
 	<form >
 		   <label>
@@ -91,13 +89,20 @@ class NameForm extends React.Component {
   }
 }
 
-const vids = () => (
-	<Layout>
-	<NameForm/>
-	<div>
-</div>
-	 </Layout>
-)
+
+const vids = () => {
+	if (typeof(window) !== 'undefined'){
+	return(
+		<Layout>
+		<NameForm/>
+		<div>
+		</div>
+		 </Layout>
+		 )
+		 }
+	else{return null}
+}
+
 
 export default vids
 
