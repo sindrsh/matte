@@ -1,14 +1,14 @@
 import React from "react"
 import MathJax from 'react-mathjax2'
+import "../components/pdfDataContainer"
 
-const PdfOut = ({ location }) => {
-	if(location.state){
+const PdfOut = () => {
 	let alph = ['a','b','c','d','e','f','g','h','i'];
 	let cnt = 0;
 	let margleft = '10px';
 	let margleftupdate = '20px';
 	let leftTotal = parseInt(margleft, 10) + parseInt( margleftupdate, 10 ) + "px";
-	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix, Sub2];
+	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Sub2];
 	let upd_data = [];
 	let upd_funclist = [];
 
@@ -214,10 +214,16 @@ const PdfOut = ({ location }) => {
 		let exs = upd_funclist[m](k);
 		return (<div style={{marginLeft: leftTotal}}> {exs} </div>)
 	}
-
-	for (let i = 0; i < location.state.data.length; i++){
-				if (location.state.data[i]){
-					upd_data.push(location.state.data[i]);
+	
+	let variables = ['ad2', 'ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'sub2'];
+	let data = [];
+	let x;
+	for (x in variables){
+		data.push(window.sessionStorage.getItem(variables[x]))
+		}
+	for (let i = 0; i < data.length; i++){
+				if (data[i]){
+					upd_data.push(data[i]);
 					upd_funclist.push(funclist[i]);
 				}
 			}
@@ -227,10 +233,10 @@ const PdfOut = ({ location }) => {
 	for (let i = 0; i < upd_data.length; i++){
 				exs.push(MkExcs(i,upd_data[i]));
 			}
-	if (location.state.title) {
+	if (window.sessionStorage.getItem('title')) {
 		return (
 		<div>
-		<h1 style={{marginLeft: '25px', fontSize:'24px'}}> {location.state.title} </h1>
+		<h1 style={{marginLeft: '25px', fontSize:'24px'}}> {window.sessionStorage.getItem('title')} </h1>
 		{exs}
 		</div>
 		)
@@ -238,8 +244,6 @@ const PdfOut = ({ location }) => {
 	 else {
 		return <p> Fyll inn tittel :-) </p>
 	  }
-;}
-else{return <p>Noe er galt. Ta kontakt med Sindre! </p>;}
 }
 
 export default PdfOut

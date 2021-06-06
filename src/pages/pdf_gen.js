@@ -24,29 +24,36 @@ class NameForm extends React.Component {
     	ad3mix: null,
     	sub2: null,
     	};
-	
+    window.sessionStorage.clear();
   }
 
   chTitle = (event) => {
     this.setState({title: event.target.value});
+    window.sessionStorage.setItem("title", event.target.value);
   }
   chAd2 = (event) => {
     this.setState({ad2: event.target.value});
+    window.sessionStorage.setItem("ad2", event.target.value);
   }
   chAd3 = (event) => {
     this.setState({ad3: event.target.value});
+    window.sessionStorage.setItem("ad3", event.target.value);
   }
   chAd2wc = (event) => {
     this.setState({ad2wc: event.target.value});
+    window.sessionStorage.setItem("ad2wc", event.target.value);
   }
   chAd2mix = (event) => {
     this.setState({ad2mix: event.target.value});
+    window.sessionStorage.setItem("ad2mix", event.target.value);
   }
   chAd3mix = (event) => {
     this.setState({ad3mix: event.target.value});
+    window.sessionStorage.setItem("ad3mix", event.target.value);
   }
   chSub2 = (event) => {
     this.setState({sub2: event.target.value});
+    window.sessionStorage.setItem("sub2", event.target.value);
   }
   
   render() {
@@ -75,17 +82,7 @@ class NameForm extends React.Component {
     <button>
 	<Link
       to={"/pdf_out/"}
-      style={{textDecoration: 'none', display: 'block'}}
-      state={{ title: this.state.title, 
-      data: [
-      this.state.ad2,
-      this.state.ad3,
-      this.state.ad2wc,
-      this.state.ad2mix,
-      this.state.ad3mix,
-      this.state.sub2,
-      ] }}
-    >
+      style={{textDecoration: 'none', display: 'block'}}>
     Lag PDF
     </Link>
     </button>
