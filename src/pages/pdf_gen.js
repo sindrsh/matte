@@ -92,7 +92,6 @@ const vids = () => (
 		<Layout>
 		<NameForm/>
 		<div>
-		{window.sessionStorage.getItem("title")}
 		</div>
 		 </Layout>
 )
