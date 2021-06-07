@@ -100,7 +100,7 @@ const vids = () => {
 		 </Layout>
 		 )
 		 }
-	else{return null}
+	else{return <p> Ops, det ser ikkje ut til at nettlesaren du bruker støttar denne sida. </p>}
 }
 
 
