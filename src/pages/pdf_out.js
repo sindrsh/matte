@@ -3,6 +3,7 @@ import MathJax from 'react-mathjax2'
 import "../components/pdfDataContainer"
 
 const PdfOut = () => {
+
 	if (typeof(window) !== 'undefined'){
 	let alph = ['a','b','c','d','e','f','g','h','i'];
 	let cnt = 0;
@@ -235,9 +236,26 @@ const PdfOut = () => {
 	for (let i = 0; i < upd_data.length; i++){
 				exs.push(MkExcs(i,upd_data[i]));
 			}
-	return (<p>Hei </p>)
+	if (window.sessionStorage.getItem('title')) {
+		return (
+		<div>
+		<h1 style={{marginLeft: '25px', fontSize:'24px'}}> {window.sessionStorage.getItem('title')} </h1>
+		{exs}
+		</div>
+		)
+	  } 
+	 else {
+		return <p> Fyll inn tittel :-) </p>
+	  }
 	  }
 	  else{return <p> Nettlesaren din støttar ikkje denne funksjonen. </p>}
 }
 
-export default PdfOut
+const MkPdf = () =>(
+	<body>
+	<p style={{fontSize:'8px'}}> hellandmatte.no </p>
+	<PdfOut/>
+	</body>
+)
+
+export default MkPdf
