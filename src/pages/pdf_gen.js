@@ -86,15 +86,13 @@ class NameForm extends React.Component {
         </div>
     );
   }
-  componentDidMount(){
-  	window.sessionStorage.clear();
-  }
 }
 
 const vids = () => (
 		<Layout>
 		<NameForm/>
 		<div>
+		{window.sessionStorage.getItem("title")}
 		</div>
 		 </Layout>
 )
