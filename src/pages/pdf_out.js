@@ -235,17 +235,7 @@ const PdfOut = () => {
 	for (let i = 0; i < upd_data.length; i++){
 				exs.push(MkExcs(i,upd_data[i]));
 			}
-	if (window.sessionStorage.getItem('title')) {
-		return (
-		<div>
-		<h1 style={{marginLeft: '25px', fontSize:'24px'}}> {window.sessionStorage.getItem('title')} </h1>
-		{exs}
-		</div>
-		)
-	  } 
-	 else {
-		return <p> Fyll inn tittel :-) </p>
-	  }
+	return (<p>Hei </p>)
 	  }
 	  else{return <p> Nettlesaren din støttar ikkje denne funksjonen. </p>}
 }
