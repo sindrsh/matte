@@ -22,7 +22,6 @@ class NameForm extends React.Component {
     	ad3mix: null,
     	sub2: null,
     	};
-    window.sessionStorage.clear();
   }
 
   chTitle = (event) => {
@@ -55,6 +54,9 @@ class NameForm extends React.Component {
   }
   
   render() {
+  	if (typeof(window) === 'undefined'){
+  		return <p> Nettlesaren støttar ikkje denne funksjonen. </p>
+  	}
     return (
     <div>
     
@@ -87,22 +89,19 @@ class NameForm extends React.Component {
         </div>
     );
   }
+  componentDidMount(){
+  	window.sessionStorage.clear();
+  }
 }
 
 
-const vids = () => {
-	if (typeof(window) !== 'undefined'){
-	return(
+const vids = () => (
 		<Layout>
 		<NameForm/>
 		<div>
 		</div>
 		 </Layout>
-		 )
-		 }
-	else{return <p> Ops, det ser ikkje ut til at nettlesaren du bruker støttar denne sida. </p>}
-}
-
+)
 
 export default vids
 
