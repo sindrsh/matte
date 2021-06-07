@@ -221,7 +221,7 @@ const PdfOut = () => {
 	let data = [];
 	let x;
 		for (x in variables){
-			data.push(window.sessionStorage.getItem(variables[x]))
+			data.push(localStorage.getItem(variables[x]))
 			}
 			
 		for (let i = 0; i < data.length; i++){
@@ -236,10 +236,10 @@ const PdfOut = () => {
 	for (let i = 0; i < upd_data.length; i++){
 				exs.push(MkExcs(i,upd_data[i]));
 			}
-	if (window.sessionStorage.getItem('title')) {
+	if (localStorage.getItem('title')) {
 		return (
 		<div>
-		<h1 style={{marginLeft: '25px', fontSize:'24px'}}> {window.sessionStorage.getItem('title')} </h1>
+		<h1 style={{marginLeft: '25px', fontSize:'24px'}}> {localStorage.getItem('title')} </h1>
 		{exs}
 		</div>
 		)
@@ -251,11 +251,12 @@ const PdfOut = () => {
 	  else{return <p> Nettlesaren din støttar ikkje denne funksjonen. </p>}
 }
 
-const MkPdf = () =>(
-	<body>
-	<p style={{fontSize:'8px'}}> hellandmatte.no </p>
-	<PdfOut/>
-	</body>
-)
-
+const MkPdf = () =>{
+	return (
+		<body>
+		<p style={{fontSize:'8px'}}> hellandmatte.no </p>
+		<PdfOut/>
+		</body>
+	)
+}
 export default MkPdf

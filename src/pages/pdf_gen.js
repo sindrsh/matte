@@ -21,20 +21,22 @@ class NameForm extends React.Component {
     	ad2mix: null,
     	ad3mix: null,
     	sub2: null,
+    	test: null,
     	};
   }
 
   chTitle = (event) => {
 	this.setState({title: event.target.value});
-	window.sessionStorage.setItem("title", event.target.value);
+	localStorage.setItem("title", event.target.value);
+	this.setState({test: localStorage.getItem("title")});
   }
   chAd2 = (event) => {
     this.setState({ad2: event.target.value});
-    window.sessionStorage.setItem("ad2", event.target.value);
+    localStorage.setItem("ad2", event.target.value);
   }
   chAd3 = (event) => {
     this.setState({ad3: event.target.value});
-    window.sessionStorage.setItem("ad3", event.target.value);
+    localStorage.setItem("ad3", event.target.value);
   }
   chAd2wc = (event) => {
     this.setState({ad2wc: event.target.value});
@@ -83,6 +85,7 @@ class NameForm extends React.Component {
     Lag PDF
     </Link>
     </button>
+    <p>{this.state.test} </p>
         </div>
     );
   }
