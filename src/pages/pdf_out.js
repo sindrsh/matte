@@ -236,6 +236,7 @@ const PdfOut = () => {
 	for (let i = 0; i < upd_data.length; i++){
 				exs.push(MkExcs(i,upd_data[i]));
 			}
+	localStorage.setItem('title','OKAY');
 	if (localStorage.getItem('title')) {
 		return (
 		<div>
