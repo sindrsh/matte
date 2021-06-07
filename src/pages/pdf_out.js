@@ -3,6 +3,7 @@ import MathJax from 'react-mathjax2'
 import "../components/pdfDataContainer"
 
 const PdfOut = () => {
+	if (typeof(window) !== 'undefined'){
 	let alph = ['a','b','c','d','e','f','g','h','i'];
 	let cnt = 0;
 	let margleft = '10px';
@@ -218,15 +219,16 @@ const PdfOut = () => {
 	let variables = ['ad2', 'ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'sub2'];
 	let data = [];
 	let x;
-	for (x in variables){
-		data.push(window.sessionStorage.getItem(variables[x]))
-		}
-	for (let i = 0; i < data.length; i++){
-				if (data[i]){
-					upd_data.push(data[i]);
-					upd_funclist.push(funclist[i]);
-				}
+		for (x in variables){
+			data.push(window.sessionStorage.getItem(variables[x]))
 			}
+			
+		for (let i = 0; i < data.length; i++){
+					if (data[i]){
+						upd_data.push(data[i]);
+						upd_funclist.push(funclist[i]);
+					}
+				}
 	
 	let exs = [];
 	
@@ -244,13 +246,8 @@ const PdfOut = () => {
 	 else {
 		return <p> Fyll inn tittel :-) </p>
 	  }
+	  }
+	  else{return <p> Nettlesaren din støttar ikkje denne funksjonen. </p>}
 }
 
-const PdfGen = () => {
-	if (typeof(window) !== 'undefined'){
-		return(<PdfOut/>)
-	}
-	else{return null}
-}
-
-export default PdfGen
+export default PdfOut
