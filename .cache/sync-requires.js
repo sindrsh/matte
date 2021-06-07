@@ -13,6 +13,8 @@ exports.components = {
   "component---src-pages-pdf-gen-js": hot(preferDefault(require("/home/sindre/web/matte/src/pages/pdf_gen.js"))),
   "component---src-pages-pdf-out-js": hot(preferDefault(require("/home/sindre/web/matte/src/pages/pdf_out.js"))),
   "component---src-pages-rekning-js": hot(preferDefault(require("/home/sindre/web/matte/src/pages/rekning.js"))),
+  "component---src-pages-t-1-js": hot(preferDefault(require("/home/sindre/web/matte/src/pages/t1.js"))),
+  "component---src-pages-t-2-js": hot(preferDefault(require("/home/sindre/web/matte/src/pages/t2.js"))),
   "component---src-pages-tital-js": hot(preferDefault(require("/home/sindre/web/matte/src/pages/tital.js"))),
   "component---src-pages-using-typescript-tsx": hot(preferDefault(require("/home/sindre/web/matte/src/pages/using-typescript.tsx")))
 }
