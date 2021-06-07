@@ -25,38 +25,15 @@ class NameForm extends React.Component {
   }
 
   chTitle = (event) => {
-    this.setState({title: event.target.value});
-    window.sessionStorage.setItem("title", event.target.value);
+  	this.setState({title: event.target.value});
+  	window.sessionStorage.setItem("title", event.target.value);
   }
   chAd2 = (event) => {
     this.setState({ad2: event.target.value});
     window.sessionStorage.setItem("ad2", event.target.value);
   }
-  chAd3 = (event) => {
-    this.setState({ad3: event.target.value});
-    window.sessionStorage.setItem("ad3", event.target.value);
-  }
-  chAd2wc = (event) => {
-    this.setState({ad2wc: event.target.value});
-    window.sessionStorage.setItem("ad2wc", event.target.value);
-  }
-  chAd2mix = (event) => {
-    this.setState({ad2mix: event.target.value});
-    window.sessionStorage.setItem("ad2mix", event.target.value);
-  }
-  chAd3mix = (event) => {
-    this.setState({ad3mix: event.target.value});
-    window.sessionStorage.setItem("ad3mix", event.target.value);
-  }
-  chSub2 = (event) => {
-    this.setState({sub2: event.target.value});
-    window.sessionStorage.setItem("sub2", event.target.value);
-  }
   
   render() {
-  	if (typeof(window) === 'undefined'){
-  		return <p> Nettlesaren støttar ikkje denne funksjonen. </p>
-  	}
     return (
     <div>
     
@@ -69,15 +46,6 @@ class NameForm extends React.Component {
     
         <ValInput val={this.state.ad2} ch={this.chAd2} title='Addisjon med 2 siffer, utan tiarovergongar'/>
         
-        <ValInput val={this.state.ad3} ch={this.chAd3} title='Addisjon med 3 siffer, utan tiarovergongar'/>
-        
-        <ValInput val={this.state.ad2wc} ch={this.chAd2wc} title='Addisjon med 2 siffer, med tiarovergongar'/>
-        
-        <ValInput val={this.state.ad2mix} ch={this.chAd2mix} title='Addisjon med 2 siffer, blanda'/>
-        
-        <ValInput val={this.state.ad3mix} ch={this.chAd3mix} title='Addisjon med 3 siffer, blanda'/>
-        
-        <ValInput val={this.state.sub2} ch={this.chSub2} title='Subtraksjon med to siffer, utan tiarovergongar'/>
         
     <button>
 	<Link
@@ -93,7 +61,6 @@ class NameForm extends React.Component {
   	window.sessionStorage.clear();
   }
 }
-
 
 const vids = () => (
 		<Layout>
