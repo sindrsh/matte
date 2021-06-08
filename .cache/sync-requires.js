@@ -10,6 +10,7 @@ exports.components = {
   "component---src-pages-c-1-js": preferDefault(require("/home/sindre/web/matte/src/pages/c1.js")),
   "component---src-pages-c-2-js": preferDefault(require("/home/sindre/web/matte/src/pages/c2.js")),
   "component---src-pages-index-js": preferDefault(require("/home/sindre/web/matte/src/pages/index.js")),
+  "component---src-pages-pdf-gen-js": preferDefault(require("/home/sindre/web/matte/src/pages/pdf_gen.js")),
   "component---src-pages-pdf-out-js": preferDefault(require("/home/sindre/web/matte/src/pages/pdf_out.js")),
   "component---src-pages-rekning-js": preferDefault(require("/home/sindre/web/matte/src/pages/rekning.js")),
   "component---src-pages-t-2-js": preferDefault(require("/home/sindre/web/matte/src/pages/t2.js")),
