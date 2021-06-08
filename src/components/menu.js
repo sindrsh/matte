@@ -1,13 +1,13 @@
 import React from 'react'
 import Link from "gatsby-link"
-import styles from "./menu.module.css"
+import {mnu,btn,btna, ulmenu} from "./menu.module.css"
 
 // For menyen:
 const MenuLink = props =>
     <Link 
     to={props.to}
-    className={styles.btn}
-    activeClassName={styles.btna}>
+    className={btn}
+    activeClassName={btna}>
     {props.children}
     </Link>
     
@@ -20,51 +20,50 @@ const MenuLine = () =>
     </div>    
 
 const Menu = () => (
-    <div className={styles.menu} >
+    <div className={mnu} >
     
-	<ul className={styles.ulmenu}>
+	<ul className={ulmenu}>
 <Link
-      className={styles.btn}
+      className={btn}
       exact to="/"
-      activeClassName={styles.btna}
+      activeClassName={btna}
     >
     <i></i> Start
     </Link>
     <MenuLine/>
 <MenuLink
-   	 className={styles.btn}
+   	 className={btn}
       to="/tital/"
     >
     <i></i> Titalsystemet
     </MenuLink> 
 <MenuLink
-   	 className={styles.btn}
+   	 className={btn}
       to="/rekning/"
     >
     <i></i> Rekning
     </MenuLink>  
 <MenuLink
-   	 className={styles.btn}
+   	 className={btn}
       to="/brok/"
     >
     <i></i> Brøk
     </MenuLink>
       <MenuLine/>      
 <MenuLink
-   	 className={styles.btn}
+   	 className={btn}
       to="/bok/"
     >
     <i></i> Bok
     </MenuLink>    
 <MenuLink
-   	 className={styles.btn}
+   	 className={btn}
       to="/pdf_gen/"
     >
     <i></i> Oppgåvegenerator
     </MenuLink>        
       </ul>
     </div>
-    
 )
 
 export default Menu

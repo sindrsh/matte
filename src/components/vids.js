@@ -1,17 +1,17 @@
 import React from 'react'
-import styles from "./cont.module.css"
+import {blkvids, atch, hdlvids} from "./cont.module.css"
 
 const Vids = ({children}) => (
 <>	
   <div>
   <div 
-    className={styles.hdlvids}>
+    className={hdlvids}>
     <b>Videoar</b> 
     </div>
     <div
-		className={styles.blkvids}
+		className={blkvids}
 		>
-		<ul className={styles.atch}>
+		<ul className={atch}>
 		{children}
 		</ul>
 		</div>

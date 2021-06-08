@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import Menu from "./menu.js"
-import styles from "./menu.module.css"
+import {bdy,cont} from "./menu.module.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,10 +27,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-         <body className={styles.bdy}>
+         <body className={bdy}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Menu/>
-      <div className={styles.cont}>{children}</div>
+      <div className={cont}>{children}</div>
      </body>
     </>
   )

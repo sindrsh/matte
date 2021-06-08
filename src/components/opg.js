@@ -1,17 +1,17 @@
 import React from 'react'
-import styles from "./cont.module.css"
+import {blkopg, atch, hdlopg} from "./cont.module.css"
 
 const Opg = ({children}) => (
 <>	
   <div>
   <div 
-    className={styles.hdlopg}>
+    className={hdlopg}>
     <b>Oppgåver</b> 
     </div>
     <div
-		className={styles.blkopg}
+		className={blkopg}
 		>
-		<ul className={styles.atch}>
+		<ul className={atch}>
 		{children}
 		</ul>
 		</div>
