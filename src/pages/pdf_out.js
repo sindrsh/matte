@@ -1,10 +1,8 @@
-import React from "react"
+import React, { useState, useEffect } from 'react';
 import MathJax from 'react-mathjax2'
-import "../components/pdfDataContainer"
 
-const PdfOut = () => {
+function Example() {
 
-	if (typeof(window) !== 'undefined'){
 	let alph = ['a','b','c','d','e','f','g','h','i'];
 	let cnt = 0;
 	let margleft = '10px';
@@ -13,7 +11,7 @@ const PdfOut = () => {
 	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Sub2];
 	let upd_data = [];
 	let upd_funclist = [];
-
+	
 	function ExTitle(){ return (<p> <b>Oppgåve {cnt}</b> </p>)}
 
 	function MkInt(k){
@@ -25,7 +23,7 @@ const PdfOut = () => {
 	  let randm = Math.floor(Math.random() * (max+1 - min) ) + min;
 	  return parseInt(randm);
 	}
-
+	
 	function Ad2(k){
 		let exs = [];
 		exs.push(ExTitle());
@@ -208,7 +206,7 @@ const PdfOut = () => {
 		}
 		return exs;
 	}
-
+	
 	function MkExcs(i,n){
 		cnt +=1;
 		let k = MkInt(n);
@@ -217,7 +215,18 @@ const PdfOut = () => {
 		return (<div style={{marginLeft: leftTotal}}> {exs} </div>)
 	}
 	
-	let variables = ['ad2', 'ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'sub2'];
+	// ---------------------------------------
+  const [isLoaded, setLoaded] = useState(false);
+
+   useEffect(() => {
+		if (typeof localStorage !== 'undefined'){
+		setLoaded(true)
+		}
+	}, []);
+
+  if(isLoaded){
+  
+  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'sub2'];
 	let data = [];
 	let x;
 		for (x in variables){
@@ -232,31 +241,20 @@ const PdfOut = () => {
 				}
 	
 	let exs = [];
-	
 	for (let i = 0; i < upd_data.length; i++){
 				exs.push(MkExcs(i,upd_data[i]));
 			}
-	if (localStorage.getItem('title')) {
-		return (
-		<div>
-		<h1 style={{marginLeft: '25px', fontSize:'24px'}}> {localStorage.getItem('title')} </h1>
-		{exs}
-		</div>
-		)
-	  } 
-	 else {
-		return <p> Fyll inn tittel :-) </p>
-	  }
-	  }
-	  else{return <p> Nettlesaren din støttar ikkje denne funksjonen. </p>}
+  
+  return (
+    <div>
+      <h1 style={{marginLeft: '25px', fontSize:'24px'}}> {localStorage.getItem('title')} </h1>
+      {exs}
+    </div>
+  );
+  }
+  return (
+    null
+  );
 }
 
-const MkPdf = () =>{
-	return (
-		<body>
-		<p style={{fontSize:'8px'}}> hellandmatte.no </p>
-		<PdfOut/>
-		</body>
-	)
-}
-export default MkPdf
+export default Example

@@ -1,138 +1,81 @@
-import React from "react"
-import Layout from "../components/layout"
+import React, { useState, useEffect } from 'react';
 import Link from "gatsby-link"
+import Layout from "../components/layout"
 
-
-const ValInput = (props) => 
+const ValInput = (props) =>(
 	<form >
 		   <label>
-		      <input maxlength='1' size='1' type="text" value={props.val} onChange={props.ch} />
+		      <input maxlength='1' size='1' type="text" value={props.val} onChange={event => props.ch(event.target.value)} />
 		     &nbsp; {props.title}
 		    </label>
 		    </form>
+		    )
 
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    	title: null,
-    	ad2: null,
-    	ad3: null,
-    	ad2wc: null,
-    	ad2mix: null,
-    	ad3mix: null,
-    	sub2: null,
-    	test: null,
-    	};
-  }
+function Example() {
+  const [isLoaded, setLoaded] = useState(false);
 
-  chTitle = (event) => {
-	this.setState({title: event.target.value});
-	localStorage.setItem("title", event.target.value);
-	this.setState({test: localStorage.getItem("title")});
-  }
-  chAd2 = (event) => {
-    this.setState({ad2: event.target.value});
-    localStorage.setItem("ad2", event.target.value);
-  }
-  chAd3 = (event) => {
-    this.setState({ad3: event.target.value});
-    localStorage.setItem("ad3", event.target.value);
-  }
-  chAd2wc = (event) => {
-    this.setState({ad2wc: event.target.value});
-    window.sessionStorage.setItem("ad2wc", event.target.value);
-  }
-  chAd2mix = (event) => {
-    this.setState({ad2mix: event.target.value});
-    window.sessionStorage.setItem("ad2mix", event.target.value);
-  }
-  chAd3mix = (event) => {
-    this.setState({ad3mix: event.target.value});
-    window.sessionStorage.setItem("ad3mix", event.target.value);
-  }
-  chSub2 = (event) => {
-    this.setState({sub2: event.target.value});
-    window.sessionStorage.setItem("sub2", event.target.value);
-  }
+	const [title, setTitle] = useState('');	
+	const [ad2, setAd2] = useState('');		
+	const [ad3, setAd3] = useState('');
+	const [ad2wc, setAd2wc] = useState('');
+	const [ad2mix, setAd2mix] = useState('');
+	const [ad3mix, setAd3mix] = useState('');
+	const [sub2, setSub2] = useState('');
+	
+	
+  useEffect(() => {
+		if (typeof localStorage !== 'undefined'){
+		setLoaded(true)
+		}
+	}, []);
   
-  render() {
-    return (
-    <div>
-    
-     <form >
-        <label>
-        Titel &nbsp;
-          <input type="text" value={this.state.title} onChange={this.chTitle} />
-        </label>
-        </form>
-    
-        <ValInput val={this.state.ad2} ch={this.chAd2} title='Addisjon med 2 siffer, utan tiarovergongar'/>
-        
-        <ValInput val={this.state.ad3} ch={this.chAd3} title='Addisjon med 3 siffer, utan tiarovergongar'/>
-        
-        <ValInput val={this.state.ad2wc} ch={this.chAd2wc} title='Addisjon med 2 siffer, med tiarovergongar'/>
-        
-        <ValInput val={this.state.ad2mix} ch={this.chAd2mix} title='Addisjon med 2 siffer, blanda'/>
-        
-        <ValInput val={this.state.ad3mix} ch={this.chAd3mix} title='Addisjon med 3 siffer, blanda'/>
-        
-        <ValInput val={this.state.sub2} ch={this.chSub2} title='Subtraksjon med to siffer, utan tiarovergongar'/>
-        
-    <button>
-	<Link
+  useEffect(() => {
+    localStorage.setItem('title',title);
+    localStorage.setItem('ad2',ad2);
+    localStorage.setItem('ad3',ad3);
+    localStorage.setItem('ad2wc',ad2wc);
+    localStorage.setItem('ad2mix',ad2mix);
+    localStorage.setItem('ad3mix',ad3mix);
+    localStorage.setItem('sub2',sub2);
+  });
+
+  if(isLoaded){
+  	return (
+  		 <Layout>
+					<div>
+						<form >
+						  <label>
+						  Tittel &nbsp;
+						    <input type="text" value={title} onChange={event => setTitle(event.target.value)} />
+						  </label>
+						  </form>
+						  
+						 <ValInput val={ad2} ch={setAd2} title='Addisjon med 2 siffer, utan tiarovergongar'/> 
+						 
+						 <ValInput val={ad3} ch={setAd3} title='Addisjon med 3 siffer, utan tiarovergongar'/> 
+						 
+						 <ValInput val={ad2wc} ch={setAd2wc} title='Addisjon med 2 siffer, med tiarovergongar'/>
+						 
+						 <ValInput val={ad2mix} ch={setAd2mix} title='Addisjon med 2 siffer, blanda'/>
+						 
+						 <ValInput val={ad3mix} ch={setAd3mix} title='Addisjon med 2 siffer, blanda'/>
+						 
+						  <ValInput val={sub2} ch={setSub2} title='Subtraksjon med 2 siffer, utan tiarovergong'/>
+			
+			<button>			  
+					<Link
       to={"/pdf_out/"}
       style={{textDecoration: 'none', display: 'block'}}>
     Lag PDF
     </Link>
     </button>
-    <p>{this.state.test} </p>
-        </div>
-    );
+					</div>
+				 </Layout>	
+  	);
   }
+  return (
+    null
+);
 }
 
-const vids = () => (
-		<Layout>
-		<NameForm/>
-		<div>
-		</div>
-		 </Layout>
-)
-
-export default vids
-
-
-/* 
-
-//MathML
-  <div>     
-       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-     <mi>E</mi>
-     <mo>=</mo>
-     <mi>m</mi>
-     <msup>
-       <mi>c</mi>
-      <mn>2</mn>
-     </msup>
-   </math> 
-  </div>
-  
-// Checkbox
-<FormGroup row>
-		  <FormControlLabel
-		    control={<Checkbox checked={this.state.checked} 			onChange={this.handleChAd} name="checkedA" />}
-		    label="Addisjon utan tiarovergong"
-      	/>
-      	</FormGroup>  
-      	
-// Form
-<form >
-        <label>
-          <input maxlength='1' size='1' type="text" value={this.state.valAd} onChange={this.chAd2} />
-         &nbsp; Addisjon utan tiarovergongar
-        </label>
-        </form>      	
-    
-*/
-
+export default Example
