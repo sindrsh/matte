@@ -1,0 +1,36 @@
+
+:root{
+--thvid: calc(var(--blkvid) - 20px); /*Obs! Husk mellomrom ved +/-*/
+}
+
+.th{
+    width: var(--thvid);
+}
+
+.hdlone{
+	color: white;
+	background-color: #006600;
+	width: inherit;
+	padding-bottom: 6px;
+	padding-left: 5px;
+	height: 25px;
+	display: block;
+}
+
+.cnt{
+	color: white;
+	background-color: white;
+	width: inherit;
+	padding-bottom: 6px;
+	padding-left: 5px;
+	padding-top: 6px;
+	display: block;
+	top: 50px;
+}
+
+li {
+    margin: 0;
+    padding: 0.2em;
+}
+
+
