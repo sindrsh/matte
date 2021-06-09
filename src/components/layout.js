@@ -7,7 +7,6 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
@@ -15,20 +14,10 @@ import Menu from "./menu.js"
 import {bdy,cont} from "./menu.module.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
          <body className={bdy}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle='Matte' />
       <Menu/>
       <div className={cont}>{children}</div>
      </body>

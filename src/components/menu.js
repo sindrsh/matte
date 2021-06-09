@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from "gatsby-link"
+import * as React from "react"
+import { Link } from "gatsby"
 import {mnu,btn,btna, ulmenu} from "./menu.module.css"
 
 // For menyen:
@@ -9,6 +9,7 @@ const MenuLink = props =>
     className={btn}
     activeClassName={btna}>
     {props.children}
+    
     </Link>
     
 const MenuLine = () =>
