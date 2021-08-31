@@ -30,7 +30,11 @@ const vids = () => (
 	  <Box hdl="Divisjon (:)" colh="#ffb84d" pen="black">
 <li><a href="https://drive.google.com/file/d/1WAiyZKhor4-q638e9fz-M_tNruuJ5a4l/view?usp=sharing"> Med heiltal (anbefalt metode)</a></li>
 <li><a href="https://drive.google.com/file/d/1KtiWIrExY1xpICQzMBroe0MWNflDwtKy/view?usp=sharing"> Med heiltal (oppstilling)</a></li>
-	  	</Box>	 	
+	  	</Box>	
+	  	<p></p>
+		<Box hdl="Faktorisering" colh="#ffb84d" pen="black">
+<li><a href="https://drive.google.com/file/d/137zrVAHQk-1OkPy8M0MpT6eI5Bg2ChDh/view?usp=sharing"> Primtalsfaktorisering</a></li>
+	  	</Box>		  	 	
 	  	  		  	
 	  	 </Vids>
 	 </Layout>
