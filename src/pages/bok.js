@@ -7,8 +7,10 @@ const IndexPage = () => (
 	<a href="https://github.com/sindrsh/FirstPrinciplesOfMath/blob/master/MB.pdf"> Matematikken sine byggesteinar</a> 
 	<p> Tek for seg teorigrunnlaget for matematikken </p>
 	<p></p>
-	<a href="https://github.com/sindrsh/FirstPrinciplesOfMath/blob/master/MB.pdf"> Anvendt matematikk for grunnskole og VGS</a> 
-	<p> Tek for seg anvendingar. Dekker tema f.o.m. 5. klasse til 2P på VGS. (Nynorskversjon kjem innan 22. august.) </p>
+	<a href="https://github.com/sindrsh/AppliedMath/blob/master/AM_nn.pdf"> Anvendt matematikk for grunnskole og VGS</a> 
+	<p> Tek for seg anvendingar. Dekker tema f.o.m. 5. klasse til 2P på VGS.</p>
+	
+	<p> OBS! For best lesaroppleving er det anbefalt å laste ned dokumenta. </p>
   </Layout>
 )
 

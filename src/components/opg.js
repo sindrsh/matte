@@ -6,7 +6,7 @@ const Opg = ({children}) => (
   <div>
   <div 
     className={hdlopg}>
-    <b>Oppgåver</b> 
+    <b>Andre hjelpemiddel</b> 
     </div>
     <div
 		className={blkopg}

@@ -12,6 +12,7 @@ const vids = () => (
   <li><a href="https://drive.google.com/file/d/1S0m3dRRWSHp8cJ9qfGBJWrbPWGMn4PQx/view?usp=sharing"> Omgjering av einingar</a></li>
 	  </Vids>
 	  <Opg>
+	   <li><a href="https://sindrsh.itch.io/place-value-visualization"> Visualisering av tidelar</a></li>
 	  </Opg>
 	 </Layout>
 )

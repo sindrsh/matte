@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 
 import Vids from "../components/vids"
 import Box from "../components/test"
+import Opg from "../components/opg"
 
 const vids = () => (
 	<Layout>
@@ -35,8 +36,12 @@ const vids = () => (
 		<Box hdl="Faktorisering" colh="#ffb84d" pen="black">
 <li><a href="https://drive.google.com/file/d/137zrVAHQk-1OkPy8M0MpT6eI5Bg2ChDh/view?usp=sharing"> Primtalsfaktorisering</a></li>
 	  	</Box>		  	 	
-	  	  		  	
 	  	 </Vids>
+	  	 
+	<Opg>
+	<li><a href="https://www.matematikk.org/trinn5-7/gangetesteren/"> Gangetesteren</a></li>
+	  </Opg>  	 
+	  
 	 </Layout>
 )
 
