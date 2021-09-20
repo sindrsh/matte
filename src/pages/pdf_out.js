@@ -8,7 +8,7 @@ function Example() {
 	let margleft = '10px';
 	let margleftupdate = '20px';
 	let leftTotal = parseInt(margleft, 10) + parseInt( margleftupdate, 10 ) + "px";
-	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Sub2];
+	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Ad4mix,Sub2];
 	let upd_data = [];
 	let upd_funclist = [];
 	
@@ -175,6 +175,24 @@ function Example() {
 		return exs;
 	}
 	
+	function Ad4mix(k){
+		let exs = [];
+		exs.push(ExTitle());
+		
+		for (let i = 1; i <= k; i++) {
+			let a = getRndInteger(1,9999);
+			let b = getRndInteger(10,999);
+			a = a.toString();
+			b= b.toString();
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+						        <MathJax.Node inline>{a+'+'+b}
+						        </MathJax.Node>
+						</MathJax.Context></p>);  
+		}				
+		return exs;
+	}
+	
 	function Sub2(k){
 		let exs = [];
 		exs.push(ExTitle());
@@ -226,7 +244,7 @@ function Example() {
 
   if(isLoaded){
   
-  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'sub2'];
+  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'ad4mix','sub2'];
 	let data = [];
 	let x;
 		for (x in variables){

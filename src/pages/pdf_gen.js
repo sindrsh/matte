@@ -20,6 +20,7 @@ function Example() {
 	const [ad2wc, setAd2wc] = useState('');
 	const [ad2mix, setAd2mix] = useState('');
 	const [ad3mix, setAd3mix] = useState('');
+	const [ad4mix, setAd4mix] = useState('');
 	const [sub2, setSub2] = useState('');
 	
 	
@@ -36,6 +37,7 @@ function Example() {
     localStorage.setItem('ad2wc',ad2wc);
     localStorage.setItem('ad2mix',ad2mix);
     localStorage.setItem('ad3mix',ad3mix);
+    localStorage.setItem('ad4mix',ad4mix);
     localStorage.setItem('sub2',sub2);
   });
 
@@ -58,7 +60,8 @@ function Example() {
 						 
 						 <ValInput val={ad2mix} ch={setAd2mix} title='Addisjon med 2 siffer, blanda'/>
 						 
-						 <ValInput val={ad3mix} ch={setAd3mix} title='Addisjon med 2 siffer, blanda'/>
+						 <ValInput val={ad3mix} ch={setAd3mix} title='Addisjon med 3 siffer, blanda'/>
+						 <ValInput val={ad4mix} ch={setAd4mix} title='Addisjon med 4 siffer, blanda'/>						 
 						 
 						  <ValInput val={sub2} ch={setSub2} title='Subtraksjon med 2 siffer, utan tiarovergong'/>
 			
