@@ -8,7 +8,7 @@ function Example() {
 	let margleft = '10px';
 	let margleftupdate = '20px';
 	let leftTotal = parseInt(margleft, 10) + parseInt( margleftupdate, 10 ) + "px";
-	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Ad4mix,Sub2];
+	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Ad4mix,Ad4des,Sub2];
 	let upd_data = [];
 	let upd_funclist = [];
 	
@@ -162,7 +162,7 @@ function Example() {
 		exs.push(ExTitle());
 		
 		for (let i = 1; i <= k; i++) {
-			let a = getRndInteger(1,999);
+			let a = getRndInteger(100,999);
 			let b = getRndInteger(1,999);
 			a = a.toString();
 			b= b.toString();
@@ -180,13 +180,36 @@ function Example() {
 		exs.push(ExTitle());
 		
 		for (let i = 1; i <= k; i++) {
-			let a = getRndInteger(1,9999);
+			let a = getRndInteger(1000,9999);
 			let b = getRndInteger(10,999);
 			a = a.toString();
 			b= b.toString();
 			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 						        <MathJax.Node inline>{a+'+'+b}
+						        </MathJax.Node>
+						</MathJax.Context></p>);  
+		}				
+		return exs;
+	}
+	
+	function Ad4des(k){
+		let exs = [];
+		exs.push(ExTitle());
+		
+		for (let i = 1; i <= k; i++) {
+			let a = getRndInteger(10,999);
+			let b = getRndInteger(10,999);
+			let c = getRndInteger(0,9);
+			let d = getRndInteger(1,9);
+			a = a.toString();
+			b = b.toString();
+			c = c.toString();
+			d = d.toString();
+			
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+						        <MathJax.Node inline>{a+','+c+'+'+b+','+d}
 						        </MathJax.Node>
 						</MathJax.Context></p>);  
 		}				
@@ -244,7 +267,7 @@ function Example() {
 
   if(isLoaded){
   
-  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'ad4mix','sub2'];
+  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'ad4mix','ad4des','sub2'];
 	let data = [];
 	let x;
 		for (x in variables){
