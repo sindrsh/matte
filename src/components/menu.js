@@ -55,7 +55,7 @@ const Menu = () => (
    	 className={btn}
       to="/bok/"
     >
-    <i></i> Bok
+    <i></i> Bøker
     </MenuLink>    
 <MenuLink
    	 className={btn}
