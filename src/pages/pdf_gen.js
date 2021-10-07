@@ -23,7 +23,11 @@ function Example() {
 	const [ad4mix, setAd4mix] = useState('');
 	const [ad4des, setAd4des] = useState('');
 	const [sub2, setSub2] = useState('');
-	
+	const [sub2wc, setSub2wc] = useState('');
+	const [sub3, setSub3] = useState('');
+	const [sub3wc, setSub3wc] = useState('');
+	const [mul21, setMul21] = useState('');
+	const [mul31, setMul31] = useState('');
 	
   useEffect(() => {
 		if (typeof localStorage !== 'undefined'){
@@ -41,6 +45,11 @@ function Example() {
     localStorage.setItem('ad4mix',ad4mix);
     localStorage.setItem('ad4des',ad4des);
     localStorage.setItem('sub2',sub2);
+    localStorage.setItem('sub2wc',sub2wc);
+    localStorage.setItem('sub3',sub3);
+    localStorage.setItem('sub3wc',sub3wc);
+    localStorage.setItem('mul21',mul21);
+    localStorage.setItem('mul31',mul31);
   });
 
   if(isLoaded){
@@ -66,6 +75,11 @@ function Example() {
 						 <ValInput val={ad4mix} ch={setAd4mix} title='Addisjon med 4 siffer, blanda'/>						 
 						  <ValInput val={ad4des} ch={setAd4des} title='Addisjon med desimaltal'/>						 
 						  <ValInput val={sub2} ch={setSub2} title='Subtraksjon med 2 siffer, utan tiarovergong'/>
+						  <ValInput val={sub2wc} ch={setSub2wc} title='Subtraksjon med 2 siffer, med tiarovergong'/>
+						  <ValInput val={sub3} ch={setSub3} title='Subtraksjon med 3 siffer, utan tiarovergong'/>
+						  <ValInput val={sub3wc} ch={setSub3wc} title='Subtraksjon med 3 siffer, med tiarovergong'/>
+						  <ValInput val={mul21} ch={setMul21} title='Multiplikasjon, 2*1 siffer'/>
+						  <ValInput val={mul31} ch={setMul31} title='Multiplikasjon, 3*1 siffer'/>
 			
 			<button>			  
 					<Link

@@ -7,8 +7,7 @@ const IndexPage = () => (
   <Layout>
     <h1>Hei!</h1>
     <p>På denne sida finn du forskjellige ressursar for å øve deg i matte.</p>
-    <div style={{ maxWidth: `300px`, marginTop:"-20px"}}>
-    </div>
+	<p> Tilbakemeldingar om innhaldet kan du sende til <a href="mailto:sindre.heggen@vestnes.kommune.no"> sindre.heggen@vestnes.kommune.no</a></p>
   </Layout>
 )
 
