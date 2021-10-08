@@ -28,7 +28,8 @@ function Example() {
 	const [sub3wc, setSub3wc] = useState('');
 	const [mul21, setMul21] = useState('');
 	const [mul31, setMul31] = useState('');
-	
+	const [div21, setDiv21] = useState('');
+	const [div31, setDiv31] = useState('');			
   useEffect(() => {
 		if (typeof localStorage !== 'undefined'){
 		setLoaded(true)
@@ -50,6 +51,8 @@ function Example() {
     localStorage.setItem('sub3wc',sub3wc);
     localStorage.setItem('mul21',mul21);
     localStorage.setItem('mul31',mul31);
+    localStorage.setItem('div21',div21);
+    localStorage.setItem('div31',div31);
   });
 
   if(isLoaded){
@@ -80,6 +83,8 @@ function Example() {
 						  <ValInput val={sub3wc} ch={setSub3wc} title='Subtraksjon med 3 siffer, med tiarovergong'/>
 						  <ValInput val={mul21} ch={setMul21} title='Multiplikasjon, 2*1 siffer'/>
 						  <ValInput val={mul31} ch={setMul31} title='Multiplikasjon, 3*1 siffer'/>
+						  <ValInput val={div21} ch={setDiv21} title='Divisjon, 2:1 siffer'/>
+						  <ValInput val={div31} ch={setDiv31} title='Divisjon, 3:1 siffer'/>
 			
 			<button>			  
 					<Link

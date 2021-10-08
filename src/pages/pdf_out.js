@@ -8,7 +8,7 @@ function Example() {
 	let margleft = '10px';
 	let margleftupdate = '20px';
 	let leftTotal = parseInt(margleft, 10) + parseInt( margleftupdate, 10 ) + "px";
-	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Ad4mix,Ad4des,Sub2, Sub2wc, Sub3, Sub3wc, Mul21, Mul31];
+	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Ad4mix,Ad4des,Sub2, Sub2wc, Sub3, Sub3wc, Mul21, Mul31, Div21, Div31];
 	let upd_data = [];
 	let upd_funclist = [];
 	
@@ -20,7 +20,6 @@ function Example() {
 	}
 
 	function getRndInteger(min, max) {
-		if (min==max){ return min }	
 		let randm = Math.floor(Math.random() * (max+1 - min) ) + min;
 		return parseInt(randm);
 	}
@@ -367,6 +366,9 @@ function Example() {
 			a = a.toString();
 			b = b.toString();
 			let s = b+'\\cdot'+a; 
+			if (getRndInteger(0,1) === 0){
+				s = a+'\\cdot'+b;
+			}
 			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
@@ -385,7 +387,48 @@ function Example() {
 			b = getRndInteger(101,999);
 			a = a.toString();
 			b = b.toString();
-			let s = b+'\\cdot'+a; 
+			let s = b+'\\cdot'+a;
+			if (getRndInteger(0,1) === 0){
+				s = a+'\\cdot'+b;
+			} 
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+				            <MathJax.Node inline>{s}
+				            </MathJax.Node>
+				    </MathJax.Context></p>);  
+		}
+		return exs;
+	}
+	
+	function Div21(k){
+		let exs = [];
+		exs.push(ExTitle());
+		let a, b;
+		for (let i = 1; i <= k; i++) {
+			a = getRndInteger(2,9);
+			b = a*getRndInteger(10,Math.floor(100/a));
+			a = a.toString();
+			b = b.toString();
+			let s = b+':'+a;
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+				            <MathJax.Node inline>{s}
+				            </MathJax.Node>
+				    </MathJax.Context></p>);  
+		}
+		return exs;
+	}
+	
+	function Div31(k){
+		let exs = [];
+		exs.push(ExTitle());
+		let a, b;
+		for (let i = 1; i <= k; i++) {
+			a = getRndInteger(2,9);
+			b = a*getRndInteger(100,Math.floor(1000/a));
+			a = a.toString();
+			b = b.toString();
+			let s = b+':'+a;
 			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
@@ -414,7 +457,7 @@ function Example() {
 
   if(isLoaded){
   
-  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'ad4mix','ad4des','sub2', 'sub2wc', 'sub3', 'sub3wc', 'mul21', 'mul31'];
+  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'ad4mix','ad4des','sub2', 'sub2wc', 'sub3', 'sub3wc', 'mul21', 'mul31', 'div21', 'div31'];
 	let data = [];
 	let x;
 		for (x in variables){
