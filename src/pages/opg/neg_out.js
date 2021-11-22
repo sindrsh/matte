@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MathJax from 'react-mathjax2'
 
-function Addition() {
+function NegativeNum() {
 
 	let alph = ['a','b','c','d','e','f','g','h','i'];
 	let cnt = 0;
@@ -155,4 +155,4 @@ function Addition() {
   );
 }
 
-export default Addition
+export default NegativeNum

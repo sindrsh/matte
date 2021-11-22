@@ -13,6 +13,8 @@ exports.components = {
   "component---src-pages-opg-ad-out-js": preferDefault(require("/home/sindre/web/matte/src/pages/opg/ad_out.js")),
   "component---src-pages-opg-neg-gen-js": preferDefault(require("/home/sindre/web/matte/src/pages/opg/neg_gen.js")),
   "component---src-pages-opg-neg-out-js": preferDefault(require("/home/sindre/web/matte/src/pages/opg/neg_out.js")),
+  "component---src-pages-opg-test-gen-js": preferDefault(require("/home/sindre/web/matte/src/pages/opg/test_gen.js")),
+  "component---src-pages-opg-test-out-js": preferDefault(require("/home/sindre/web/matte/src/pages/opg/test_out.js")),
   "component---src-pages-oppgaver-js": preferDefault(require("/home/sindre/web/matte/src/pages/oppgaver.js")),
   "component---src-pages-pdf-gen-js": preferDefault(require("/home/sindre/web/matte/src/pages/pdf_gen.js")),
   "component---src-pages-pdf-out-js": preferDefault(require("/home/sindre/web/matte/src/pages/pdf_out.js")),
