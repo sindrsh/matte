@@ -59,6 +59,30 @@
  text-decoration: none;
 }
 
+.opg {
+    display: block;
+    color: blue;
+    text-decoration: none;
+    margin-bottom: 20px;
+}      
+
+.opg a{
+  background-color: #6666ff;
+  border: none;
+  color: white;
+  padding: 8px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 280px;
+  margin-bottom:8px;
+}
+.opg a:hover {
+    color: black;
+    background-color: #ccf5ff;
+}
+
 .amnts{
 	width: 25px;
 	color: red;

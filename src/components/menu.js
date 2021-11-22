@@ -61,8 +61,14 @@ const Menu = () => (
    	 className={btn}
       to="/pdf_gen/"
     >
-    <i></i> Oppgåvegenerator
-    </MenuLink>        
+    <i></i> Oppgåver
+    </MenuLink>
+<MenuLink
+   	 className={btn}
+      to="/oppgaver/"
+    >
+    <i></i> Oppgåver (ny)
+    </MenuLink>             
       </ul>
     </div>
 )
