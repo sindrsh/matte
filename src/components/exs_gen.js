@@ -16,17 +16,17 @@ function getRndInteger(min, max) {
 
 function Generator(funclist, variables) {
 
-	let cnt = 0;
 	let margleft = '10px';
 	let margleftupdate = '20px';
 	let leftTotal = parseInt(margleft, 10) + parseInt( margleftupdate, 10 ) + "px";
 	let upd_data = [];
 	let upd_funclist = [];
 	
+	let cnt = 0;
 	function MkExcs(i,n){
 		cnt +=1;
 		let k = MkInt(n);
-		let exs_fas = upd_funclist[i](k);
+		let exs_fas = upd_funclist[i](k, cnt);
 		return (
 			[<div style={{marginLeft: leftTotal}}> {exs_fas[0]} </div>, 
 			 <div style={{marginLeft: leftTotal}}> {exs_fas[1]} </div>])
@@ -78,5 +78,6 @@ function Generator(funclist, variables) {
     null
   );
 }
- 
+
+export { alph, ExTitle, MkInt, getRndInteger, Generator };
     

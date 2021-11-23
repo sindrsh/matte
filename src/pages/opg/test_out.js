@@ -32,11 +32,11 @@ function Ad(k, n){
 		return [exs, fas];
 	}
 
-function Sub(k){
+function Sub(k, n){
 		let exs = [];
-		exs.push(ExTitle());
+		exs.push(ExTitle(n));
 		let fas = [];
-		fas.push(ExTitle());
+		fas.push(ExTitle(n));
 		
 		let a, a_s, b, b_s;
 		for (let i = 1; i <= k; i++) {

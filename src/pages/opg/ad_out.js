@@ -1,33 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import {alph, ExTitle, MkInt, getRndInteger, Generator} from "../../components/exs_gen"
 import MathJax from 'react-mathjax2'
 
-function Addition() {
-
-	let alph = ['a','b','c','d','e','f','g','h','i'];
-	let cnt = 0;
-	let margleft = '10px';
-	let margleftupdate = '20px';
-	let leftTotal = parseInt(margleft, 10) + parseInt( margleftupdate, 10 ) + "px";
-	let funclist = [Ad2,Ad3,Ad2wc,Ad2mix,Ad3mix,Ad4mix,Ad4des];
-	let upd_data = [];
-	let upd_funclist = [];
-	
-	function ExTitle(){ return (<p> <b>Oppgåve {cnt}</b> </p>)}
-
-	function MkInt(k){
-	 let n = parseInt(k);
-	 return n;
-	}
-
-	function getRndInteger(min, max) {
-		let randm = Math.floor(Math.random() * (max+1 - min) ) + min;
-		return parseInt(randm);
-	}
-	
-	function Ad2(k){
+function Ad2(k, n){
 		let exs = [];
-		exs.push(ExTitle());
-		let ad1, ad10, ad1a, ad10a;
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
+		let ad1, ad10, ad1a, ad10a, sm;
 		for (let i = 1; i <= k; i++) {
 			ad10 = getRndInteger(1,9);
 			ad10a = getRndInteger(0,9-ad10);
@@ -35,11 +15,13 @@ function Addition() {
 				ad10a='';
 				ad1 = getRndInteger(0,8);
 				ad1a = getRndInteger(1,9-ad1);
+				sm = ad1a+ad10*10+ad1;
 				}
 			else {
-			ad10a = ad10a.toString();
 			ad1 = getRndInteger(0,9);
 			ad1a = getRndInteger(0,9-ad1);
+			sm = ad10a*10+ad1a+ad10*10+ad1;
+			ad10a = ad10a.toString();
 			}
 			
 			ad1 = ad1.toString();
@@ -54,15 +36,18 @@ function Addition() {
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
-				    </MathJax.Context></p>);  
+				    </MathJax.Context></p>);
+			fas.push(<p> {sm} </p>);  
 		}
-		return exs;
+		return [exs, fas];
 	}
 	
-	function Ad3(k){
+	function Ad3(k, n){
 		let exs = [];
-		exs.push(ExTitle());
-		let ad1, ad10, ad100, ad1a, ad10a, ad100a;
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
+		let ad1, ad10, ad100, ad1a, ad10a, ad100a, sm;
 		for (let i = 1; i <= k; i++) {
 			ad1 = getRndInteger(0,9);
 			ad10 = getRndInteger(0,9);
@@ -74,11 +59,13 @@ function Addition() {
 				ad100a='';
 				ad10 = getRndInteger(0,8);
 				ad10a = getRndInteger(1,9-ad10);
+				sm = ad1a+ad1+10*(ad10a+ad10)+ad100*100;
 				}
 			else {
-			ad100a = ad100a.toString();
 			ad10 = getRndInteger(0,9);
 			ad10a = getRndInteger(0,9-ad10);
+			sm = ad1a+ad1+10*(ad10a+ad10)+100*(ad100+ad100a);
+			ad100a = ad100a.toString();
 			}
 			
 			ad1 = ad1.toString();
@@ -95,16 +82,19 @@ function Addition() {
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
-				    </MathJax.Context></p>);  
+				    </MathJax.Context></p>); 
+			fas.push(<p> {sm} </p>);    
 		}
-		return exs;
+		return [exs, fas];
 	}
 
-	function Ad2wc(k){
+	function Ad2wc(k, n){
 		let exs = [];
-		exs.push(ExTitle());
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
 		
-		let ad1, ad10, ad1a, ad10a;
+		let ad1, ad10, ad1a, ad10a, sm;
 		for (let i = 1; i <= k; i++) {
 			ad10 = getRndInteger(1,9);
 			ad10a = getRndInteger(0,9);
@@ -114,11 +104,13 @@ function Addition() {
 				ad10a='';
 				ad1 = getRndInteger(1,9);
 				ad1a = getRndInteger(10-ad1,9);
+				sm = ad1a+ad10*10+ad1;
 				}
 			else {
 				if(ad1+ad1a<10){
 					ad10a = getRndInteger(10-ad10,9);
 				}
+				sm = ad1a+10*(ad10+ad10a)+ad1;
 				ad10a = ad10a.toString();
 			}
 			
@@ -134,74 +126,91 @@ function Addition() {
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
-				    </MathJax.Context></p>);  
+				    </MathJax.Context></p>);
+			fas.push(<p> {sm} </p>);   
 		}
-		return exs;
+		return [exs, fas];
 	}
 	
-	function Ad2mix(k){
+	function Ad2mix(k, n){
 		let exs = [];
-		exs.push(ExTitle());
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
 		
 		for (let i = 1; i <= k; i++) {
 			let a = getRndInteger(1,99);
 			let b = getRndInteger(1,99);
+			let sm = a+b;
 			a = a.toString();
 			b= b.toString();
 			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 						        <MathJax.Node inline>{a+'+'+b}
 						        </MathJax.Node>
-						</MathJax.Context></p>);  
+						</MathJax.Context></p>); 
+			fas.push(<p> {sm} </p>); 			 
 		}				
-		return exs;
+		return [exs, fas];
 	}
 	
-	function Ad3mix(k){
+	function Ad3mix(k, n){
 		let exs = [];
-		exs.push(ExTitle());
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
 		
 		for (let i = 1; i <= k; i++) {
 			let a = getRndInteger(100,999);
 			let b = getRndInteger(1,999);
+			let sm = a+b;
 			a = a.toString();
 			b= b.toString();
 			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 						        <MathJax.Node inline>{a+'+'+b}
 						        </MathJax.Node>
-						</MathJax.Context></p>);  
+						</MathJax.Context></p>);
+			fas.push(<p> {sm} </p>); 			  
 		}				
-		return exs;
+		return [exs, fas];
 	}
 	
-	function Ad4mix(k){
+	function Ad4mix(k, n){
 		let exs = [];
-		exs.push(ExTitle());
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
 		
 		for (let i = 1; i <= k; i++) {
 			let a = getRndInteger(1000,9999);
 			let b = getRndInteger(10,999);
+			let sm = a+b;
 			a = a.toString();
-			b= b.toString();
+			b = b.toString();
 			
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 						        <MathJax.Node inline>{a+'+'+b}
 						        </MathJax.Node>
-						</MathJax.Context></p>);  
+						</MathJax.Context></p>);
+			fas.push(<p> {sm} </p>); 			  
 		}				
-		return exs;
+		return [exs, fas];
 	}
 	
-	function Ad4des(k){
+	function Ad4des(k, n){
 		let exs = [];
-		exs.push(ExTitle());
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
 		
 		for (let i = 1; i <= k; i++) {
 			let a = getRndInteger(10,999);
 			let b = getRndInteger(10,999);
 			let c = getRndInteger(0,9);
 			let d = getRndInteger(1,9);
+			let sm = a+c/10.0 + b+d/10.0;
+			
 			a = a.toString();
 			b = b.toString();
 			c = c.toString();
@@ -212,59 +221,16 @@ function Addition() {
 						        <MathJax.Node inline>{a+','+c+'+'+b+','+d}
 						        </MathJax.Node>
 						</MathJax.Context></p>);  
+			fas.push(<p> {sm.toFixed(1)} </p>);
 		}				
-		return exs;
+		return [exs,fas];
 	}
-	
-	
-	function MkExcs(i,n){
-		cnt +=1;
-		let k = MkInt(n);
-		let m = MkInt(i);
-		let exs = upd_funclist[m](k);
-		return (<div style={{marginLeft: leftTotal}}> {exs} </div>)
-	}
-	
-	// ---------------------------------------
-  const [isLoaded, setLoaded] = useState(false);
 
-   useEffect(() => {
-		if (typeof localStorage !== 'undefined'){
-		setLoaded(true)
-		}
-	}, []);
-
-  if(isLoaded){
-  
-  let variables = ['ad2','ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'ad4mix','ad4des'];
-	let data = [];
-	let x;
-		for (x in variables){
-			data.push(localStorage.getItem(variables[x]))
-			}
-			
-		for (let i = 0; i < data.length; i++){
-					if (data[i]){
-						upd_data.push(data[i]);
-						upd_funclist.push(funclist[i]);
-					}
-				}
-	
-	let exs = [];
-	for (let i = 0; i < upd_data.length; i++){
-				exs.push(MkExcs(i,upd_data[i]));
-			}
-  
-  return (
-    <div>
-      <h1 style={{marginLeft: '25px', fontSize:'24px'}}> {localStorage.getItem('title')} </h1>
-      {exs}
-    </div>
-  );
-  }
-  return (
-    null
-  );
+function MkDiv(){
+	let funclist = [Ad2, Ad3, Ad2wc, Ad2mix, Ad3mix, Ad4mix, Ad4des]
+	let variables = ['ad2', 'ad3', 'ad2wc', 'ad2mix', 'ad3mix', 'ad4mix', 'ad4des'];
+	let excs = Generator(funclist, variables);
+	return ( excs );
 }
 
-export default Addition
+export default MkDiv

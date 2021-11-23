@@ -14,7 +14,10 @@ const OpgLink = props =>
 const IndexPage = () => (
   <Layout>
 	<div className={opg}>
-		<OpgLink to="../opg/ad_gen/"> Addisjon </OpgLink>
+		<OpgLink to="../opg/ad_gen/"> Addisjon (+) </OpgLink>
+		<OpgLink to="../opg/sub_gen/"> Subtraksjon (-) </OpgLink>
+		<OpgLink to="../opg/mul_gen/"> Multiplikasjon </OpgLink>
+		<OpgLink to="../opg/div_gen/"> Divisjon </OpgLink>
 		<OpgLink to="../opg/neg_gen/"> Negative tal </OpgLink>
 	</div>
   </Layout>
