@@ -81,9 +81,40 @@ function Mul21(k, n){
 		return [exs, fas];
 	}
 
+	function MulDesTens(k, n){
+		let exs = [];
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
+		let deslist = [9,99,999];
+		let declist = [10, 100, 1000];
+		
+		let a, b, c;
+		for (let i = 1; i <= k; i++) {
+			a = getRndInteger(0,deslist[getRndInteger(0,2)]);
+			b = getRndInteger(0,deslist[getRndInteger(0,2)]);
+			if (a === 0 && b === 0) {
+				b = getRndInteger(1,999);
+			}
+			c = declist[getRndInteger(0,2)];
+			let sm = (a+b/(10**b.toString().length))*c;
+			a = a.toString();
+			b = b.toString();
+			c = c.toString();
+			let s = a+'{,}'+b + '\\cdot'+c;
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+				            <MathJax.Node inline>{s}
+				            </MathJax.Node>
+				    </MathJax.Context></p>); 
+			fas.push(<p> {sm} </p>);	     
+		}
+		return [exs, fas];
+	}
+
 function MkDiv(){
-	let funclist = [Mul21, Mul31, Mul22]
-	let variables = ['mul21','mul31', 'mul22'];
+	let funclist = [Mul21, Mul31, Mul22, MulDesTens]
+	let variables = ['mul21','mul31', 'mul22', 'mulDesTens'];
 	let excs = Generator(funclist, variables);
 	return ( excs );
 }

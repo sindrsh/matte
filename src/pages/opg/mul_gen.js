@@ -16,7 +16,8 @@ function Example() {
 	const [title, setTitle] = useState('');
 	const [mul21, setMul21] = useState('');
 	const [mul31, setMul31] = useState('');
-	const [mul22, setMul22] = useState('');			
+	const [mul22, setMul22] = useState('');
+	const [mulDesTens, setMulDesTens] = useState('');				
   useEffect(() => {
 		if (typeof localStorage !== 'undefined'){
 		setLoaded(true)
@@ -28,6 +29,7 @@ function Example() {
     localStorage.setItem('mul21',mul21);
     localStorage.setItem('mul31',mul31);
     localStorage.setItem('mul22',mul22);
+    localStorage.setItem('mulDesTens',mulDesTens);
   });
 
   if(isLoaded){
@@ -43,7 +45,9 @@ function Example() {
 						  
 	<ValInput val={mul21} ch={setMul21} title='Multiplikasjon, 2*1 siffer'/>
 	<ValInput val={mul31} ch={setMul31} title='Multiplikasjon, 3*1 siffer'/>
-	<ValInput val={mul22} ch={setMul22} title='Multiplikasjon, 2*2 siffer'/>					  					 
+	<ValInput val={mul22} ch={setMul22} title='Multiplikasjon, 2*2 siffer'/>	
+	<ValInput val={mulDesTens} ch={setMulDesTens} title='Multiplikasjon, desimaltal og 10, 100 eller 1000'/>	
+					  					 
 			<button>			  
 					<Link
       to={"../../opg/mul_out/"}
