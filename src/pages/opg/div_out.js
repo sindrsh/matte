@@ -46,7 +46,7 @@ import MathJax from 'react-mathjax2'
 				    </MathJax.Context></p>); 
 			fas.push(<p> {c} </p>);	 			     
 		}
-		return [fas, exs];
+		return [exs, fas];
 	}
 
 function MkDiv(){
