@@ -2,6 +2,53 @@ import React, { useState, useEffect } from 'react';
 import {alph, ExTitle, MkInt, getRndInteger, Generator} from "../../components/exs_gen"
 import MathJax from 'react-mathjax2'
 
+function Mul11u(k, n){
+		let exs = [];
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
+		
+		let a, b;
+		for (let i = 1; i <= k; i++) {
+			a = getRndInteger(1,9);
+			b = getRndInteger(0,9);
+			let sm = a*b;
+			a = a.toString();
+			b = b.toString();
+			let s = b+'\\cdot'+a; 
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+				            <MathJax.Node inline>{s}
+				            </MathJax.Node>
+				    </MathJax.Context></p>); 
+		}
+		return [exs, fas];
+}
+
+function Mul11(k, n){
+		let exs = [];
+		exs.push(ExTitle(n));
+		let fas = [];
+		fas.push(ExTitle(n));
+		
+		let a, b;
+		for (let i = 1; i <= k; i++) {
+			a = getRndInteger(1,9);
+			b = getRndInteger(0,9);
+			let sm = a*b;
+			a = a.toString();
+			b = b.toString();
+			let s = b+'\\cdot'+a; 
+			
+			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
+				            <MathJax.Node inline>{s}
+				            </MathJax.Node>
+				    </MathJax.Context></p>); 
+			fas.push(<p> {sm} </p>);	
+		}
+		return [exs, fas];
+}
+
 function Mul21(k, n){
 		let exs = [];
 		exs.push(ExTitle(n));
@@ -113,8 +160,8 @@ function Mul21(k, n){
 	}
 
 function MkDiv(){
-	let funclist = [Mul21, Mul31, Mul22, MulDesTens]
-	let variables = ['mul21','mul31', 'mul22', 'mulDesTens'];
+	let funclist = [Mul11u, Mul11, Mul21, Mul31, Mul22, MulDesTens]
+	let variables = ['mul11u','mul11','mul21','mul31', 'mul22', 'mulDesTens'];
 	let excs = Generator(funclist, variables);
 	return ( excs );
 }
