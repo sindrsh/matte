@@ -19,6 +19,7 @@ const IndexPage = () => (
 		<OpgLink to="../opg/mul_gen/"> Multiplikasjon </OpgLink>
 		<OpgLink to="../opg/div_gen/"> Divisjon </OpgLink>
 		<OpgLink to="../opg/neg_gen/"> Negative tal </OpgLink>
+		<OpgLink to="../opg/lig_gen/"> Likningar </OpgLink>
 	</div>
   </Layout>
 )

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {alph, ExTitle, MkInt, getRndInteger, Generator} from "../../components/exs_gen"
+import React from 'react';
+import {alph, ExTitle, getRndInteger, Generator} from "../../components/exs_gen"
 import MathJax from 'react-mathjax2'
 
 function Sub2(k, n){

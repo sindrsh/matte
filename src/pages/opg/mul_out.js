@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {alph, ExTitle, MkInt, getRndInteger, Generator} from "../../components/exs_gen"
+import React from 'react';
+import {alph, ExTitle, getRndInteger, Generator} from "../../components/exs_gen"
 import MathJax from 'react-mathjax2'
 
 function Mul11u(k, n){
@@ -12,7 +12,6 @@ function Mul11u(k, n){
 		for (let i = 1; i <= k; i++) {
 			a = getRndInteger(1,9);
 			b = getRndInteger(0,9);
-			let sm = a*b;
 			a = a.toString();
 			b = b.toString();
 			let s = b+'\\cdot'+a; 
