@@ -56,7 +56,7 @@ function NegativeNum() {
 					s = b_s + '= x + ' + a_s;	
 				}
 			}
-			fas.push(<p> {x} </p>);
+			fas.push(<p> x={x} </p>);
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
@@ -90,7 +90,7 @@ function NegativeNum() {
 			else{
 				s = a_s+'x-'+c_s+' = '+b_s+'x +'+d_s;
 			}
-			fas.push(<p> {d+c} </p>);
+			fas.push(<p> x={d+c} </p>);
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
@@ -125,7 +125,7 @@ function NegativeNum() {
 			else{
 				s = a_s+'x-'+c_s+' = '+b_s+'x +'+d_s;
 			}
-			fas.push(<p> {(d+c)/n} </p>);
+			fas.push(<p> x={(d+c)/n} </p>);
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
@@ -161,7 +161,7 @@ function NegativeNum() {
 			else{
 				s = b_s+'x +'+d_s+' = '+a_s+'x-'+c_s;
 			}
-			fas.push(<p> {(d+c)/n} </p>);
+			fas.push(<p> x={(d+c)/n} </p>);
 			exs.push(<p> {alph[i-1]}) <MathJax.Context input='tex'>
 				            <MathJax.Node inline>{s}
 				            </MathJax.Node>
