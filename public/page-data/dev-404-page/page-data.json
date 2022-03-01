@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---cache-dev-404-page-js",
+    "path": "/dev-404-page/",
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404.html"},{"path":"/404/"},{"path":"/bok/"},{"path":"/brok/"},{"path":"/"},{"path":"/oppgaver/"},{"path":"/pdf_gen/"},{"path":"/pdf_out/"},{"path":"/rekning/"},{"path":"/tital/"},{"path":"/opg/ad_gen/"},{"path":"/opg/ad_out/"},{"path":"/opg/div_gen/"},{"path":"/opg/div_out/"},{"path":"/opg/lig_gen/"},{"path":"/opg/lig_out/"},{"path":"/opg/mul_gen/"},{"path":"/opg/mul_out/"},{"path":"/opg/neg_gen/"},{"path":"/opg/neg_out/"},{"path":"/opg/sub_gen/"},{"path":"/opg/sub_out/"}]}},"pageContext":{}},
+    "staticQueryHashes": []}
